@@ -6,7 +6,8 @@ import { SeparadorComponent } from "../../componentes/separador/separador.compon
 import { ContatoComponent } from "../../componentes/contato/contato.component";
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Contato, ContatoService } from '../../services/contato.service';
+import { ContatoService } from '../../services/contato.service';
+import { Contato } from '../../componentes/contato/contato';
 
 @Component({
   selector: 'app-lista-contatos',
