@@ -7,7 +7,8 @@ import { Contato } from '../componentes/contato/contato';
 export class ContatoService {
   private contatos: Contato[] = [];
   constructor() {
-    this.contatos = JSON.parse(localStorage.getItem('contatos') || '');
+    const contatosStorage = localStorage.getItem('contatos');
+    this.contatos = contatosStorage ? JSON.parse(contatosStorage) : [];
     localStorage.setItem('contatos', JSON.stringify(this.contatos));
   }
   getContatos() {
