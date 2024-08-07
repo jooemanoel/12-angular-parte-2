@@ -1,15 +1,6 @@
 {
   "contatos": [
     {
-      "nome": "Maria",
-      "telefone": "99 99999999",
-      "email": "maria@email.com",
-      "aniversario": "1995-06-01",
-      "redes": "",
-      "observacoes": "",
-      "id": 1
-    },
-    {
       "nome": "João",
       "telefone": "88 88888888",
       "email": "joao@email.com",
@@ -35,6 +26,15 @@
       "redes": "",
       "obs": "",
       "id": 4
+    },
+    {
+      "nome": "asdf",
+      "telefone": "12345",
+      "email": "asdf@asdf.com",
+      "aniversario": "",
+      "redes": "",
+      "obs": "",
+      "id": 5
     }
   ]
 }

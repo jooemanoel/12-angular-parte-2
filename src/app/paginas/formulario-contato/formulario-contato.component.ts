@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from "../../componentes/separador/separador.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
 
 @Component({
@@ -22,11 +22,15 @@ import { ContatoService } from '../../services/contato.service';
 export class FormularioContatoComponent implements OnInit {
   contatoForm!: FormGroup;
 
-  constructor(private contatosService: ContatoService, private router: Router) {
-  }
+  constructor(
+    private contatosService: ContatoService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.inicializarFormulario();
+    this.carregarContato();
   }
 
   inicializarFormulario() {
@@ -40,9 +44,20 @@ export class FormularioContatoComponent implements OnInit {
     });
   }
 
+  carregarContato() {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (id) {
+      this.contatosService.buscarContato(parseInt(id)).subscribe((contato) => {
+        this.contatoForm.patchValue(contato);
+      });
+    }
+  }
+
   salvarContato() {
     if (this.contatoForm.valid) {
       const novoContato = this.contatoForm.value;
+      const id = this.activatedRoute.snapshot.paramMap.get('id');
+      novoContato.id = id ? parseInt(id) : null;
       console.log(novoContato);
       this.contatosService.salvarContato(novoContato).subscribe(() => {
         this.contatoForm.reset();
