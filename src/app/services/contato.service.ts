@@ -17,6 +17,6 @@ export class ContatoService {
     return this.http.get<Contato[]>(this.API);
   }
   salvarContato(contato: Contato) {
-
+    return this.http.post<Contato>(this.API, contato);
   }
 }

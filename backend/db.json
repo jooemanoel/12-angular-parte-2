@@ -1,22 +1,40 @@
 {
-    "contatos": [
-        {
-            "nome": "Maria",
-            "telefone": "99 99999999",
-            "email": "maria@email.com",
-            "aniversario": "1995-06-01",
-            "redes": "",
-            "observacoes": "",
-            "id": 1
-        },
-        {
-            "nome": "João",
-            "telefone": "88 88888888",
-            "email": "joao@email.com",
-            "aniversario": "1990-01-06",
-            "redes": "",
-            "observacoes": "",
-            "id": 2
-        }
-    ]
+  "contatos": [
+    {
+      "nome": "Maria",
+      "telefone": "99 99999999",
+      "email": "maria@email.com",
+      "aniversario": "1995-06-01",
+      "redes": "",
+      "observacoes": "",
+      "id": 1
+    },
+    {
+      "nome": "João",
+      "telefone": "88 88888888",
+      "email": "joao@email.com",
+      "aniversario": "1990-01-06",
+      "redes": "",
+      "observacoes": "",
+      "id": 2
+    },
+    {
+      "nome": "Miguel",
+      "telefone": "999999999",
+      "email": "miguel@miguel.com",
+      "aniversario": "",
+      "redes": "",
+      "obs": "",
+      "id": 3
+    },
+    {
+      "nome": "Lucas",
+      "telefone": "999999999",
+      "email": "lucas@lucas.com",
+      "aniversario": "",
+      "redes": "",
+      "obs": "",
+      "id": 4
+    }
+  ]
 }

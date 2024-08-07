@@ -43,9 +43,12 @@ export class FormularioContatoComponent implements OnInit {
   salvarContato() {
     if (this.contatoForm.valid) {
       const novoContato = this.contatoForm.value;
-      this.contatosService.salvarContato(novoContato);
-      this.contatoForm.reset();
-      this.router.navigateByUrl('/lista-contatos');
+      console.log(novoContato);
+      this.contatosService.salvarContato(novoContato).subscribe(() => {
+        this.contatoForm.reset();
+        this.router.navigateByUrl('/lista-contatos');
+      });
+
     }
   }
 
